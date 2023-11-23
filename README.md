@@ -1,5 +1,7 @@
 # Ex-01-Simple-Web-Server
-## Date:
+## NAME: GURU REVANTH KUMARAVEL RADHIKA
+## REFERENCE NUMBER: 23004484
+## DEPARTMENT: AI & DS
 
 ## AIM:
 To develop a simple webserver to serve html pages.
@@ -21,9 +23,31 @@ Serving the HTML pages.
 Testing the webserver.
 
 ## PROGRAM:
+```
+from http.server import HTTPServer, BaseHTTPRequestHandler
 
+content="""
+<html>
+<h**ead>
+</head>
+<body>
+<h1>Welcome</h1>
+</body>
+</html>
+"""
+class HelloHandler (BaseHTTPRequestHandler):
+    def do_GET(self):
+
+
+        self.send  (200)
+        self.send_header('content-type', 'text/html; charset=utf-8')
+        self.end_headers()
+        self.wfile.write(content.encode())
+```
 
 ## OUTPUT:
+![WhatsApp Image 2023-11-22 at 10 29 22_c72e098c](https://github.com/Guru-Revanth/ODD2023-WT-Ex-01-Simple-Web-Server/assets/139841931/638a9795-90b7-4edb-8c48-df12531581c2)
+
 
 
 ## RESULT:
