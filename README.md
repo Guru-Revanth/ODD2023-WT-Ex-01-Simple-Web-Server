@@ -26,29 +26,31 @@ Testing the webserver.
 ```
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
-content="""
+content= """
 <html>
-<h**ead>
+<head>
 </head>
 <body>
 <h1>Welcome</h1>
 </body>
 </html>
 """
-class HelloHandler (BaseHTTPRequestHandler):
-    def do_GET(self):
 
-
-        self.send  (200)
-        self.send_header('content-type', 'text/html; charset=utf-8')
+class HelloHandler(BaseHTTPRequestHandler) :
+    def do_GET (self) :
+        self.send response (200)
+        self.send_header('Content-type', 'text/html; charset=utf-8')
         self.end_headers()
         self.wfile.write(content.encode())
+
+
+server_address = ('', 80)
+httpd = HTTPServer (server_address, HelloHandler)
+httpd.serve_forever() 
 ```
 
 ## OUTPUT:
-![WhatsApp Image 2023-11-22 at 10 29 22_c72e098c](https://github.com/Guru-Revanth/ODD2023-WT-Ex-01-Simple-Web-Server/assets/139841931/638a9795-90b7-4edb-8c48-df12531581c2)
-
-
+![Alt text](image.png)
 
 ## RESULT:
 The program for implementing simple webserver is executed successfully.
